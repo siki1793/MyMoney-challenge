@@ -49,7 +49,7 @@ The application can also take input commands from a file. You can pass multiple 
 java -jar build/target/mymoney-1.0.jar input1.txt
 ```
 
-# Commands to implemented
+## Commands to implemented
 
 | Command     | Description                                                 |
 |-------------|-------------------------------------------------------------|
@@ -61,7 +61,7 @@ java -jar build/target/mymoney-1.0.jar input1.txt
 | `exit`      | Exit from the application.                                  |
 
 
-# Code Coverage Report
+## Code Coverage Report
 
 ![Code Coverage Report](https://drive.google.com/uc?id=1FV5uSpjIb9f-q5Qxv56VQ_UozQTE7LE_)
 
@@ -71,7 +71,7 @@ java -jar build/target/mymoney-1.0.jar input1.txt
 
 
 
-# Interactive Example of all the commands
+## Interactive Example of all the commands
 ### Example 1
 ```
 $ ALLOCATE 6000 3000 1000

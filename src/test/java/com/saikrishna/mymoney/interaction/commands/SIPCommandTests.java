@@ -14,12 +14,12 @@ import static org.mockito.Mockito.mock;
 
 public class SIPCommandTests {
   private static MyMoneyCommandHandler myMoneyCommandHandler;
-  private static SIPCommand sipCommand;
+  private static AllocateSIPCommand sipCommand;
 
   @BeforeAll
   public static void setup() {
     myMoneyCommandHandler = mock(MyMoneyCommandHandler.class);
-    sipCommand = new SIPCommand(myMoneyCommandHandler);
+    sipCommand = new AllocateSIPCommand(myMoneyCommandHandler, Command.SIP);
   }
 
   @Test

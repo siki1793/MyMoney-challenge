@@ -8,13 +8,12 @@ import com.saikrishna.mymoney.exception.InvalidParameterException;
 import com.saikrishna.mymoney.exception.InvalidTransactionException;
 import com.saikrishna.mymoney.exception.MyMoneyException;
 import com.saikrishna.mymoney.handler.MyMoneyCommandHandler;
-import com.saikrishna.mymoney.interaction.commands.AllocateCommand;
 import com.saikrishna.mymoney.interaction.commands.BalanceCommand;
 import com.saikrishna.mymoney.interaction.commands.ChangeCommand;
 import com.saikrishna.mymoney.interaction.commands.Command;
 import com.saikrishna.mymoney.interaction.commands.CommandHandler;
 import com.saikrishna.mymoney.interaction.commands.RebalanceCommand;
-import com.saikrishna.mymoney.interaction.commands.SIPCommand;
+import com.saikrishna.mymoney.interaction.commands.AllocateSIPCommand;
 
 public class CommandFactory {
 
@@ -33,8 +32,8 @@ public class CommandFactory {
    */
   public static CommandFactory init(MyMoneyCommandHandler myMoneyCommandHandler) {
     final CommandFactory commandFactory = new CommandFactory();
-    commandFactory.addCommand(Command.ALLOCATE, new AllocateCommand(myMoneyCommandHandler));
-    commandFactory.addCommand(Command.SIP, new SIPCommand(myMoneyCommandHandler));
+    commandFactory.addCommand(Command.ALLOCATE, new AllocateSIPCommand(myMoneyCommandHandler, Command.ALLOCATE));
+    commandFactory.addCommand(Command.SIP, new AllocateSIPCommand(myMoneyCommandHandler, Command.SIP));
     commandFactory.addCommand(Command.CHANGE, new ChangeCommand(myMoneyCommandHandler));
     commandFactory.addCommand(Command.BALANCE, new BalanceCommand(myMoneyCommandHandler));
     commandFactory.addCommand(Command.REBALANCE, new RebalanceCommand(myMoneyCommandHandler));
